@@ -1,7 +1,5 @@
+from flask_blog.admin import app
 
-from flask_blog import create_app
-
-app = create_app()
 
 if __name__ == '__main__':
     # Режим отладки (debug=True) должен использоваться только на этапе разработки, на локальной машине.

@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_mail import Mail
+from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_blog.config import Config
@@ -25,6 +26,7 @@ def create_app():
     db.init_app(app)
     login_manager.init_app(app)
     mail.init_app(app)
+    migrate = Migrate(app, db)
 
     from flask_blog.users.routes import users
     from flask_blog.main.routes import main
